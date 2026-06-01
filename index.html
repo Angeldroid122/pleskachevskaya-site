@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Мария Львовна Плескачевская | Педагог-психолог</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Georgia', serif;
+            background: linear-gradient(145deg, #e0f3e8 0%, #c8e6d9 100%);
+            color: #1e3a2f;
+            line-height: 1.5;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.94);
+            border-radius: 2rem;
+            box-shadow: 0 20px 40px rgba(30, 58, 47, 0.15);
+            overflow: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2f6b4a, #3e8b64);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .photo-frame {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d9f0e4, #b8e1c8);
+            padding: 5px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #e0f0e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            color: #2f6b4a;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            letter-spacing: -0.5px;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #d9f0e4;
+            color: #1e5628;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            margin-top: 0.8rem;
+            font-weight: 500;
+        }
+
+        .nav-buttons {
+            background: white;
+            padding: 0.8rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid #cde6db;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(4px);
+        }
+
+        .nav-btn {
+            background: #eaf5ef;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #2a6046;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .nav-btn:hover {
+            background: #3e8b64;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1rem 0 0;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffffcc;
+            backdrop-filter: blur(4px);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #1e4a34;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: 0.2s;
+            border: 1px solid #b8d5c5;
+        }
+
+        .contact-link:hover {
+            background: white;
+            border-color: #3e8b64;
+        }
+
+        .content {
+            padding: 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+            border-left: 4px solid #6eae8c;
+            padding-left: 1.2rem;
+            background: #fefef9;
+            border-radius: 1rem;
+            scroll-margin-top: 70px;
+        }
+
+        .section h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #1d5a3e;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section h2:before {
+            content: "✦";
+            font-size: 1.6rem;
+            color: #458b66;
+        }
+
+        .question {
+            font-weight: 600;
+            color: #1e4a34;
+            font-size: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.4rem;
+            background: #eafaf2;
+            display: inline-block;
+            padding: 0.1rem 0.8rem;
+            border-radius: 30px;
+        }
+
+        .answer {
+            color: #2d4a3b;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid #bdddcb;
+            background: #fcfef9;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            background: #e2f0e9;
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px;
+            margin: 0.8rem 0;
+            font-size: 0.95rem;
+            color: #1c4e38;
+        }
+
+        .grid-2 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: #eef7f2;
+            border-radius: 1.5rem;
+            padding: 1rem;
+            flex: 1 1 200px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); background: #e4f3ea;}
+
+        .footer {
+            background: #e1f0e8;
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 1px solid #bcddcc;
+            font-size: 0.8rem;
+            color: #2b6246;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 0.5rem; }
+            .hero h1 { font-size: 1.5rem; }
+            .section h2 { font-size: 1.3rem; }
+            .nav-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+            .contact-link { font-size: 0.75rem; padding: 0.3rem 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="photo-frame">
+            <div class="photo-placeholder">
+                👩‍🏫
+            </div>
+        </div>
+        <h1>Мария Львовна Плескачевская</h1>
+        <div class="subtitle">«Москвичка по рождению, тамбовчанка по духу»</div>
+        <div class="badge">педагог-психолог • 38 лет в профессии</div>
+        
+        <div class="contact-bar">
+            <a href="tel:+79001234567" class="contact-link">📞 +7 (900) 123-45-67</a>
+            <a href="mailto:m.l.pleskachevskaya@psycho-school.ru" class="contact-link">✉️ Написать</a>
+            <a href="#" class="contact-link">💬 Запись на консультацию</a>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="nav-btn" onclick="scrollToSection('detstvo')">🧸 Детство</button>
+        <button class="nav-btn" onclick="scrollToSection('put')">🎓 Выбор пути</button>
+        <button class="nav-btn" onclick="scrollToSection('rabota')">⚙️ Работа & методика</button>
+        <button class="nav-btn" onclick="scrollToSection('lichnoe')">💚 Личное</button>
+        <button class="nav-btn" onclick="scrollToSection('pozhelaniya')">✨ Пожелания</button>
+        <button class="nav-btn" onclick="scrollToSection('dostizheniya')">🏆 Достижения</button>
+    </div>
+
+    <div class="content">
+        <!-- Детство -->
+        <div id="detstvo" class="section">
+            <h2>Детство & школьные годы</h2>
+            <div class="question">📍 Где родились и прошло детство?</div>
+            <div class="answer">«Я родилась в Москве 4 марта 1963 года. Но детство у меня было необычное — мы часто переезжали по служебным делам отца. А сознательная юность прошла уже в Тамбове, куда семья окончательно переехала, когда мне было 14 лет. Так что я "москвичка по рождению, тамбовчанка по духу".»</div>
+
+            <div class="question">🧸 Кем мечтали стать в детстве?</div>
+            <div class="answer">«Честно? Я хотела быть врачом, потом — воспитателем в детском саду. Даже играла в "больницу" и "школу" с соседскими ребятишками. А психологом стала чуть позже, когда поняла, что лечить надо не тело, а душу и отношения. 😊»</div>
+
+            <div class="question">🍎 Первый класс и учительница?</div>
+            <div class="answer">«Конечно! Звали Валентина Ивановна. Она была строгая, но очень справедливая. Однажды я расплакалась из-за двойки, а она сказала: "Маша, ошибка — это не провал, а подсказка, куда расти". Эти слова я помню до сих пор и часто говорю их своим ученикам-подросткам.»</div>
+        </div>
+
+        <!-- Выбор пути -->
+        <div id="put" class="section">
+            <h2>Выбор пути</h2>
+            <div class="question">💡 Почему стали педагогом-психологом?</div>
+            <div class="answer">«Случай из 9-го класса. Одна моя одноклассница очень переживала из-за развода родителей — замкнулась, перестала учиться. Рядом не оказалось взрослого, кто бы просто её выслушал. Я тогда подумала: "Как жаль, что в школе нет человека, который понимает душу ребёнка наравне с учителем". Так и родилась мечта.»</div>
+
+            <div class="question">🎓 Вуз и факультет</div>
+            <div class="answer">«Я поступила в Московский государственный педагогический университет (МПГУ) им. Ленина, на факультет педагогики и психологии. Это были прекрасные годы — лекции профессоров, библиотека, споры с однокурсниками до утра. Москва дала мне академическую базу, а Тамбов — настоящую практику.»</div>
+
+            <div class="question">✨ Первая самостоятельная работа</div>
+            <div class="answer">«О, да! Это был кружок "Учись общаться" для пятиклассников в тамбовской школе № 22. Я готовилась неделю, написала 10 страниц конспекта... А на занятии мальчишка — Вовка — сказал: "Мария Львовна, а давайте не по бумажке, мы спать хотим". Я растерялась, выключила план, и мы начали играть в "Ассоциации". С тех пор я поняла: психолог должен быть живым, а не просто "по учебнику".»</div>
+        </div>
+
+        <!-- Работа -->
+        <div id="rabota" class="section">
+            <h2>Работа & методика</h2>
+            <div class="question">⏳ Сколько лет работаете?</div>
+            <div class="answer">«Общий стаж — 38 лет. Из них 12 лет отдала нашему техникуму.»</div>
+
+            <div class="question">⚠️ Самое трудное в работе психолога?</div>
+            <div class="answer">«Самое трудное — когда ребёнку нужна помощь, а родители говорят: "С ним всё нормально, сам пройдёт". Или когда видишь задатки таланта, а ребёнка ломают оценки. Психолог часто работает "в тишине" — наш результат не в пятерках, а в том, что человеку стало чуть легче жить.»</div>
+
+            <div class="question">❤️ Самое радостное?</div>
+            <div class="answer">«Самое радостное — видеть, как десятиклассник, который год назад боялся ответить у доски, ведёт школьный совет. Или когда бывший ученик, уже взрослый, пишет: "Спасибо, вы сказали мне тогда в 7-м классе, что я не дурак, а просто другой. Это спасло меня". Такие моменты стоят всего.»</div>
+
+            <div class="question">🧪 Любимый диагностический метод</div>
+            <div class="answer">«Я очень люблю проективные методики, особенно "Несуществующее животное" и "Рисунок семьи". Они показывают больше, чем сто слов. А ещё — обыкновенная песочница. Глазами не выразить, а руками в песке — легко.»</div>
+
+            <div class="question">👥 С какими возрастами интереснее?</div>
+            <div class="answer">«Подростки. Да, они колючие, громкие, часто недоверчивые. Но именно в 12–16 лет в человеке зарождается настоящая личность. Повернуть эту энергию в мирное русло, научить их самих понимать себя — это как решать сложнейшую головоломку. Азарт!»</div>
+        </div>
+
+        <!-- Личное -->
+        <div id="lichnoe" class="section">
+            <h2>Личное & человеческое</h2>
+            <div class="question">🍀 Формула счастья</div>
+            <div class="answer quote">«Не оценивать — понимать. Не давить — предлагать. И всегда помнить, что за плохим поведением стоит либо боль, либо страх.»</div>
+
+            <div class="question">📚 Книги и фильмы коллегам и ученикам</div>
+            <div class="answer">📖 Из книг — "Психология влияния" Чалдини (для всех) и "Живая педагогика" Амонашвили (для коллег).<br>
+            🎬 А из фильмов обязательно посмотрите "Общество мёртвых поэтов" и наш старый советский "Доживём до понедельника". Кино о настоящих учителях.</div>
+
+            <div class="question">🧶 Хобби для переключения</div>
+            <div class="answer">«Я собираю керамические колокольчики и вяжу крючком. Вязание — это моя медитация. Сидишь, петля за петлёй, восстанавливаешь равновесие после тяжёлого разговора. Колокольчики звенят на даче под Тамбовом — и мир становится проще.»</div>
+
+            <div class="question">🏆 Любимая цитата о педагогике</div>
+            <div class="answer quote">«Учитель не тот, кто учит, а тот, у кого учатся.» <span style="font-size:0.9rem;">(Станислав Ежи Лец)</span></div>
+        </div>
+
+        <!-- Пожелания -->
+        <div id="pozhelaniya" class="section">
+            <h2>Пожелания & напутствия</h2>
+            <div class="question">🌱 Молодым педагогам</div>
+            <div class="answer">«Не бойтесь своих ошибок. Начинайте урок или беседу с "Здравствуйте, я тоже волнуюсь". Любите детей не за послушание, а за жизнь. И всегда оставляйте 5 минут в день только для себя — чтобы выдохнуть и вспомнить, зачем вы пришли в эту профессию.»</div>
+
+            <div class="question">💌 Бывшим ученикам спустя годы</div>
+            <div class="answer quote">«Простите меня, если я была слишком резкой или что-то не поняла. И знайте: я помню почти каждого из вас. Помню ваши улыбки, ваши слёзы, ваши первые победы. Вы — моё главное портфолио. Спасибо, что вы есть.»</div>
+        </div>
+
+        <!-- Достижения -->
+        <div id="dostizheniya" class="section">
+            <h2>Достижения & признание</h2>
+            <div class="grid-2">
+                <div class="card"><strong>📜 Почётный работник образования</strong><br>Награда Министерства просвещения РФ</div>
+                <div class="card"><strong>🏆 Лауреат конкурса «Педагог-психолог России»</strong><br>2015, 2020 годы</div>
+                <div class="card"><strong>📘 Автор публикаций</strong><br>Статьи в журнале «Школьный психолог», методические пособия по работе с подростками</div>
+                <div class="card"><strong>🎤 Спикер всероссийских конференций</strong><br>Темы: «Проективные методики в школе», «Эмоциональный интеллект подростка»</div>
+            </div>
+            <div class="answer" style="margin-top:1rem;">🌟 За 38 лет работы более 500 учеников нашли свой путь, 20+ педагогов прошли наставничество. Главное достижение — доверие детей и родителей.</div>
+        </div>
+
+        <!-- Факты -->
+        <div class="grid-2">
+            <div class="card"><strong>🏫 38 лет</strong><br>безупречного служения детям</div>
+            <div class="card"><strong>🧩 проективные методики</strong><br>«Несуществующее животное», песочница</div>
+            <div class="card"><strong>🎓 МПГУ им. Ленина</strong><br>факультет педагогики и психологии</div>
+            <div class="card"><strong>🧶 вязание + колокольчики</strong><br>тихая радость после работы</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        ✦  Мария Львовна Плескачевская  |  Педагог-психолог, вдохновение и забота  ✦<br>
+        «Не оценивать — понимать. Не давить — предлагать.»
+    </div>
+</div>
+
+<script>
+    function scrollToSection(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            const offset = 70;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+    }
+</script>
+</body>
+</html>
