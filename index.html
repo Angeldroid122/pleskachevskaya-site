@@ -119,6 +119,17 @@
             background: #fefef9;
             border-radius: 1rem;
             scroll-margin-top: 80px;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .section h2 {
@@ -136,7 +147,7 @@
             font-size: 1.8rem;
         }
 
-        /* Карточки курсов и публикаций */
+        /* Карточки */
         .cards-grid {
             display: flex;
             flex-wrap: wrap;
@@ -256,6 +267,19 @@
             color: #1b4332;
         }
 
+        .timeline {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid #40916c;
+        }
+        .timeline-item {
+            margin-bottom: 1rem;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: #2d6a4f;
+        }
+
         @media (max-width: 700px) {
             .content { padding: 1.2rem; }
             .section h2 { font-size: 1.4rem; }
@@ -274,42 +298,71 @@
     </div>
 
     <div class="nav">
-        <a href="#home">🏠 Главная</a>
-        <a href="#about">📖 О себе</a>
-        <a href="#courses">📚 Курсы</a>
-        <a href="#publications">📄 Публикации</a>
-        <a href="#news">📰 Новости</a>
-        <a href="#contacts">📞 Контакты</a>
+        <a href="#" onclick="showSection('home'); return false;">🏠 Главная</a>
+        <a href="#" onclick="showSection('bio'); return false;">📖 Полная биография</a>
+        <a href="#" onclick="showSection('courses'); return false;">📚 Курсы</a>
+        <a href="#" onclick="showSection('publications'); return false;">📄 Публикации</a>
+        <a href="#" onclick="showSection('news'); return false;">📰 Новости</a>
+        <a href="#" onclick="showSection('contacts'); return false;">📞 Контакты</a>
     </div>
 
     <div class="content">
         <!-- Главная страница -->
-        <div id="home" class="section">
+        <div id="home" class="section active">
             <h2>Добро пожаловать</h2>
             <div class="card" style="background:#eafaf2;">
                 <p style="font-size:1.1rem;">✨ <strong>Мария Львовна Плескачевская</strong> — педагог-психолог с 38-летним стажем, почётный работник образования, лауреат конкурса «Педагог-психолог России».</p>
                 <p style="margin-top:0.8rem;">На этом сайте вы найдёте информацию о моей профессиональной деятельности, преподаваемых курсах, научных публикациях, а также сможете связаться со мной.</p>
                 <p style="margin-top:0.8rem;">🎓 Основные достижения: более 500 учеников, 20+ педагогов-наставников, авторские методики по работе с подростками.</p>
             </div>
+            <div class="cards-grid" style="margin-top:1.5rem;">
+                <div class="card"><strong>🏫 38 лет</strong><br>в профессии</div>
+                <div class="card"><strong>🎓 МПГУ им. Ленина</strong><br>Педагогика и психология</div>
+                <div class="card"><strong>🧩 Проективные методики</strong><br>«Несуществующее животное», песочница</div>
+                <div class="card"><strong>🧶 Вязание + колокольчики</strong><br>тихая радость после работы</div>
+            </div>
         </div>
 
-        <!-- О себе -->
-        <div id="about" class="section">
-            <h2>О себе</h2>
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold;">📍 Биография</div>
-            <div class="answer" style="margin-top:0.5rem;">«Я родилась в Москве 4 марта 1963 года. Детство было необычное — мы часто переезжали. Сознательная юность прошла в Тамбове. Так что я "москвичка по рождению, тамбовчанка по духу".»</div>
+        <!-- ПОЛНАЯ БИОГРАФИЯ (максимально подробно) -->
+        <div id="bio" class="section">
+            <h2>Полная биография</h2>
+            
+            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold;">📍 Детство и юность</div>
+            <div class="answer" style="margin-top:0.5rem;">Мария Львовна родилась 4 марта 1963 года в Москве. Детство прошло в частых переездах по служебным делам отца — семья жила в разных городах, что сформировало гибкий характер и умение находить общий язык с разными людьми. В 14 лет семья окончательно переехала в Тамбов, который стал для неё родным городом. Сама она говорит: «Я москвичка по рождению, тамбовчанка по духу».</div>
 
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🎓 Образование</div>
-            <div class="answer" style="margin-top:0.5rem;">Московский государственный педагогический университет (МПГУ) им. Ленина, факультет педагогики и психологии. Кандидат педагогических наук.</div>
+            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">📚 Школьные годы</div>
+            <div class="answer" style="margin-top:0.5rem;">В школе Мария Львовна была активной ученицей. Любимыми предметами были литература и биология. Первая учительница — Валентина Ивановна — сказала ей однажды: «Маша, ошибка — это не провал, а подсказка, куда расти». Эти слова стали жизненным ориентиром. В 9 классе произошёл случай, определивший профессию: одноклассница переживала развод родителей, замкнулась, и рядом не оказалось взрослого, который бы её выслушал. Тогда Мария Львовна решила стать тем человеком, который понимает душу ребёнка.</div>
 
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🏆 Профессиональный опыт и награды</div>
-            <div class="answer" style="margin-top:0.5rem;">• 38 лет педагогической деятельности (из них 12 лет в техникуме).<br>
-            • Почётный работник образования РФ.<br>
-            • Лауреат всероссийского конкурса «Педагог-психолог России» (2015, 2020).<br>
-            • Автор статей в журнале «Школьный психолог».</div>
+            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🎓 Высшее образование</div>
+            <div class="answer" style="margin-top:0.5rem;">Поступила в Московский государственный педагогический университет (МПГУ) им. Ленина на факультет педагогики и психологии. Вспоминает лекции профессоров, ночи в библиотеке, жаркие споры с однокурсниками. Москва дала академическую базу, а Тамбов — настоящую практику. Затем окончила аспирантуру и защитила кандидатскую диссертацию по педагогической психологии.</div>
+
+            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">👩‍🏫 Профессиональный путь</div>
+            <div class="answer" style="margin-top:0.5rem;">
+                <div class="timeline">
+                    <div class="timeline-item"><span class="timeline-year">1988–1995:</span> Педагог-психолог в тамбовской школе №22. Первый самостоятельный опыт — кружок «Учись общаться».</div>
+                    <div class="timeline-item"><span class="timeline-year">1995–2005:</span> Руководитель психологической службы в школе, разработка авторских программ.</div>
+                    <div class="timeline-item"><span class="timeline-year">2005–2017:</span> Преподаватель психологии в техникуме, наставничество молодых педагогов.</div>
+                    <div class="timeline-item"><span class="timeline-year">2017–настоящее время:</span> Педагог-психолог, лектор, автор публикаций.</div>
+                </div>
+            </div>
+
+            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🏆 Награды и достижения</div>
+            <div class="answer" style="margin-top:0.5rem;">
+                • Почётный работник образования РФ<br>
+                • Лауреат всероссийского конкурса «Педагог-психолог России» (2015, 2020)<br>
+                • Благодарственные письма Министерства просвещения<br>
+                • Грамоты администрации Тамбовской области<br>
+                • Автор более 15 научных статей в рецензируемых журналах
+            </div>
+
+            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">💡 Научные интересы</div>
+            <div class="answer" style="margin-top:0.5rem;">Проективные методики в психологии, эмоциональный интеллект подростков, профилактика буллинга, песочная терапия, возрастная психология.</div>
+
+            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🧘 Личная жизнь и хобби</div>
+            <div class="answer" style="margin-top:0.5rem;">Мария Львовна собирает керамические колокольчики и вяжет крючком. Вязание называет своей медитацией: «Сидишь, петля за петлёй, восстанавливаешь равновесие после тяжёлого разговора». Колокольчики звенят на даче под Тамбовом. Любит перечитывать Чехова, смотрит советское кино и «Общество мёртвых поэтов».</div>
 
             <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🍀 Жизненное кредо</div>
-            <div class="answer quote" style="background:#e2f0e9; padding:0.8rem; border-radius:1rem; margin-top:0.5rem;">«Не оценивать — понимать. Не давить — предлагать. И помнить: за плохим поведением — боль или страх.»</div>
+            <div class="answer quote" style="background:#e2f0e9; padding:0.8rem; border-radius:1rem; margin-top:0.5rem;">«Не оценивать — понимать. Не давить — предлагать. И всегда помнить, что за плохим поведением стоит либо боль, либо страх.»</div>
         </div>
 
         <!-- Курсы -->
@@ -318,22 +371,22 @@
             <div class="cards-grid">
                 <div class="card">
                     <h3>📘 Психология общения</h3>
-                    <p>Курс для студентов и старшеклассников. Основы эффективной коммуникации, разрешение конфликтов, активное слушание.</p>
+                    <p>Основы эффективной коммуникации, разрешение конфликтов, активное слушание.</p>
                     <a href="#" class="btn">Скачать программу (PDF)</a>
                 </div>
                 <div class="card">
                     <h3>🧠 Возрастная психология</h3>
-                    <p>Особенности развития детей и подростков. Психические процессы, кризисы возраста, методы диагностики.</p>
+                    <p>Особенности развития детей и подростков. Кризисы возраста, методы диагностики.</p>
                     <a href="#" class="btn">Скачать программу (PDF)</a>
                 </div>
                 <div class="card">
                     <h3>🎭 Проективные методики</h3>
-                    <p>Практический курс: «Несуществующее животное», «Рисунок семьи», песочная терапия. Для психологов и педагогов.</p>
+                    <p>«Несуществующее животное», «Рисунок семьи», песочная терапия.</p>
                     <a href="#" class="btn">Скачать программу (PDF)</a>
                 </div>
                 <div class="card">
                     <h3>💡 Эмоциональный интеллект</h3>
-                    <p>Развитие EQ у подростков. Управление эмоциями, эмпатия, саморегуляция. Авторская программа.</p>
+                    <p>Развитие EQ у подростков. Авторская программа.</p>
                     <a href="#" class="btn">Скачать программу (PDF)</a>
                 </div>
             </div>
@@ -344,21 +397,18 @@
             <h2>Научные публикации</h2>
             <div class="cards-grid">
                 <div class="card">
-                    <h3>📖 «Проективные методики в школьной психологии»</h3>
+                    <h3>«Проективные методики в школьной психологии»</h3>
                     <div class="date">Журнал «Школьный психолог», 2021</div>
-                    <p>Практическое применение рисуночных тестов и песочной терапии в работе с подростками.</p>
                     <a href="#" class="btn">Читать аннотацию</a>
                 </div>
                 <div class="card">
-                    <h3>📖 «Эмоциональный интеллект подростка: диагностика и развитие»</h3>
-                    <div class="date">Сборник конференции «Психология образования», 2023</div>
-                    <p>Методика развития EQ у учащихся 12-16 лет, результаты апробации.</p>
+                    <h3>«Эмоциональный интеллект подростка»</h3>
+                    <div class="date">Сборник конференции, 2023</div>
                     <a href="#" class="btn">Читать аннотацию</a>
                 </div>
                 <div class="card">
-                    <h3>📖 «Роль педагога-психолога в профилактике буллинга»</h3>
-                    <div class="date">Журнал «Вестник практической психологии», 2022</div>
-                    <p>Система работы с классным коллективом, индивидуальные консультации.</p>
+                    <h3>«Роль психолога в профилактике буллинга»</h3>
+                    <div class="date">«Вестник практической психологии», 2022</div>
                     <a href="#" class="btn">Читать аннотацию</a>
                 </div>
             </div>
@@ -371,19 +421,16 @@
                 <div class="card">
                     <h3>🎤 Вебинар «Современные подходы к работе с подростками»</h3>
                     <div class="date">15 июня 2026 • 15:00 МСК</div>
-                    <p>Бесплатный вебинар для педагогов и психологов. Регистрация открыта.</p>
                     <a href="#" class="btn">Подробнее</a>
                 </div>
                 <div class="card">
-                    <h3>📘 Выход новой статьи</h3>
+                    <h3>📘 Новая статья в журнале</h3>
                     <div class="date">Май 2026</div>
-                    <p>В журнале «Школьный психолог» опубликована статья «Песочная терапия в работе с тревожными детьми».</p>
                     <a href="#" class="btn">Читать</a>
                 </div>
                 <div class="card">
-                    <h3>🏆 Приглашение на конференцию в Москву</h3>
+                    <h3>🏆 Выступление на конференции в Москве</h3>
                     <div class="date">10-12 сентября 2026</div>
-                    <p>Мария Львовна выступит с докладом на Всероссийской конференции «Психология в образовании».</p>
                     <a href="#" class="btn">Подробнее</a>
                 </div>
             </div>
@@ -425,27 +472,35 @@
 
     <div class="footer">
         ✦ Мария Львовна Плескачевская | Педагог-психолог, кандидат педагогических наук ✦<br>
-        © 2026 · Все материалы сайта являются интеллектуальной собственностью преподавателя<br>
-        <span style="font-size:0.7rem;">Сайт создан в рамках учебной практики</span>
+        © 2026 · Все материалы сайта являются интеллектуальной собственностью преподавателя
     </div>
 </div>
 
 <script>
-    // Плавный скролл по якорям
-    document.querySelectorAll('.nav a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const target = document.getElementById(targetId);
-            if (target) {
-                const offset = 70;
-                const pos = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top: pos, behavior: 'smooth' });
-            }
+    function showSection(sectionId) {
+        // Скрыть все секции
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.classList.remove('active');
         });
+        // Показать выбранную
+        const activeSection = document.getElementById(sectionId);
+        if (activeSection) {
+            activeSection.classList.add('active');
+        }
+        // Сохранить в истории браузера (опционально)
+        history.pushState(null, '', '#' + sectionId);
+    }
+
+    // При загрузке проверяем хеш в URL
+    window.addEventListener('load', function() {
+        const hash = window.location.hash.substring(1);
+        if (hash && document.getElementById(hash)) {
+            showSection(hash);
+        }
     });
 
-    // Простая обработка формы (имитация отправки)
+    // Обработка формы
     document.getElementById('feedbackForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('name').value;
