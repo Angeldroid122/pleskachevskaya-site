@@ -2,44 +2,35 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Мария Львовна Плескачевская | Официальный сайт преподавателя</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мария Львовна Плескачевская | Главная</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             background: linear-gradient(145deg, #e0f3e8 0%, #c8e6d9 100%);
             color: #1e3a2f;
             line-height: 1.6;
             padding: 1rem;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.96);
+            background: rgba(255,255,255,0.96);
             border-radius: 2rem;
-            box-shadow: 0 20px 40px rgba(30, 58, 47, 0.15);
+            box-shadow: 0 20px 40px rgba(30,58,47,0.15);
             overflow: hidden;
         }
-
-        /* Шапка */
         .header {
             background: linear-gradient(135deg, #2d6a4f, #40916c);
             padding: 2rem 1.5rem;
             text-align: center;
             color: white;
         }
-
         .photo {
             width: 130px;
             height: 130px;
@@ -52,18 +43,14 @@
             font-size: 4rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
-
         .header h1 {
             font-size: 2rem;
             margin-bottom: 0.3rem;
         }
-
         .header .subtitle {
             font-size: 1rem;
-            opacity: 0.95;
             font-style: italic;
         }
-
         .badge {
             display: inline-block;
             background: #d8f3dc;
@@ -73,8 +60,6 @@
             font-size: 0.85rem;
             margin-top: 0.8rem;
         }
-
-        /* Навигация */
         .nav {
             display: flex;
             flex-wrap: wrap;
@@ -85,11 +70,7 @@
             border-bottom: 2px solid #cde6db;
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(255,255,255,0.97);
-            backdrop-filter: blur(4px);
         }
-
         .nav a {
             background: #eaf5ef;
             padding: 0.5rem 1.2rem;
@@ -97,90 +78,48 @@
             text-decoration: none;
             color: #2a6046;
             font-weight: 500;
-            font-size: 0.9rem;
             transition: 0.2s;
         }
-
         .nav a:hover {
             background: #40916c;
             color: white;
-            transform: translateY(-2px);
         }
-
-        /* Контент */
         .content {
             padding: 2rem;
         }
-
         .section {
             margin-bottom: 3rem;
             border-left: 4px solid #40916c;
             padding-left: 1.5rem;
             background: #fefef9;
             border-radius: 1rem;
-            scroll-margin-top: 80px;
-            display: none;
         }
-
-        .section.active {
-            display: block;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .section h2 {
             color: #2d6a4f;
             font-size: 1.8rem;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 1rem;
         }
-
-        .section h2:before {
-            content: "✦";
-            color: #40916c;
-            font-size: 1.8rem;
-        }
-
-        /* Карточки */
         .cards-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
             margin-top: 1rem;
         }
-
         .card {
             background: #eef7f2;
             border-radius: 1.5rem;
             padding: 1.2rem;
             flex: 1 1 280px;
-            transition: transform 0.2s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: 0.2s;
         }
-
         .card:hover {
             transform: translateY(-4px);
             background: #e4f3ea;
         }
-
         .card h3 {
             color: #2d6a4f;
             margin-bottom: 0.5rem;
-            font-size: 1.2rem;
         }
-
-        .card .date {
-            font-size: 0.8rem;
-            color: #6b9080;
-            margin-bottom: 0.5rem;
-        }
-
         .btn {
             display: inline-block;
             background: #40916c;
@@ -190,61 +129,31 @@
             text-decoration: none;
             font-size: 0.8rem;
             margin-top: 0.8rem;
-            transition: 0.2s;
         }
-
         .btn:hover {
             background: #2d6a4f;
         }
-
-        /* Контакты и форма */
         .contacts-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
-            margin-top: 1rem;
         }
-
-        .contacts-info {
+        .contacts-info, .contact-form {
             flex: 1;
             background: #eef7f2;
             padding: 1.2rem;
             border-radius: 1.5rem;
         }
-
-        .contacts-info p {
-            margin: 0.8rem 0;
-        }
-
-        .contacts-info a {
-            color: #2d6a4f;
-            text-decoration: none;
-        }
-
-        .contact-form {
-            flex: 2;
-            background: #eef7f2;
-            padding: 1.2rem;
-            border-radius: 1.5rem;
-        }
-
         .form-group {
             margin-bottom: 1rem;
         }
-
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 0.7rem;
             border: 1px solid #c8e6d9;
             border-radius: 1rem;
             font-family: inherit;
-            background: white;
         }
-
-        .form-group textarea {
-            resize: vertical;
-        }
-
         .submit-btn {
             background: #40916c;
             color: white;
@@ -252,38 +161,17 @@
             padding: 0.7rem 1.5rem;
             border-radius: 2rem;
             cursor: pointer;
-            font-size: 1rem;
         }
-
-        .submit-btn:hover {
-            background: #2d6a4f;
-        }
-
         .footer {
             background: #d8f3dc;
             text-align: center;
             padding: 1.5rem;
             font-size: 0.8rem;
-            color: #1b4332;
         }
-
-        .timeline {
-            margin: 1rem 0;
-            padding-left: 1rem;
-            border-left: 3px solid #40916c;
-        }
-        .timeline-item {
-            margin-bottom: 1rem;
-        }
-        .timeline-year {
-            font-weight: bold;
-            color: #2d6a4f;
-        }
-
         @media (max-width: 700px) {
-            .content { padding: 1.2rem; }
+            .content { padding: 1rem; }
             .section h2 { font-size: 1.4rem; }
-            .nav a { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+            .nav a { padding: 0.3rem 0.8rem; font-size: 0.75rem; }
             .header h1 { font-size: 1.5rem; }
         }
     </style>
@@ -294,223 +182,89 @@
         <div class="photo">👩‍🏫</div>
         <h1>Мария Львовна Плескачевская</h1>
         <div class="subtitle">«Москвичка по рождению, тамбовчанка по духу»</div>
-        <div class="badge">педагог-психолог • кандидат педагогических наук • почётный работник образования</div>
+        <div class="badge">педагог-психолог • кандидат педагогических наук</div>
     </div>
 
     <div class="nav">
-        <a href="#" onclick="showSection('home'); return false;">🏠 Главная</a>
-        <a href="#" onclick="showSection('bio'); return false;">📖 Полная биография</a>
-        <a href="#" onclick="showSection('courses'); return false;">📚 Курсы</a>
-        <a href="#" onclick="showSection('publications'); return false;">📄 Публикации</a>
-        <a href="#" onclick="showSection('news'); return false;">📰 Новости</a>
-        <a href="#" onclick="showSection('contacts'); return false;">📞 Контакты</a>
+        <a href="index.html">🏠 Главная</a>
+        <a href="bio.html">📖 Полная биография</a>
+        <a href="#courses">📚 Курсы</a>
+        <a href="#publications">📄 Публикации</a>
+        <a href="#news">📰 Новости</a>
+        <a href="#contacts">📞 Контакты</a>
     </div>
 
     <div class="content">
-        <!-- Главная страница -->
-        <div id="home" class="section active">
+        <div id="home" class="section">
             <h2>Добро пожаловать</h2>
             <div class="card" style="background:#eafaf2;">
-                <p style="font-size:1.1rem;">✨ <strong>Мария Львовна Плескачевская</strong> — педагог-психолог с 38-летним стажем, почётный работник образования, лауреат конкурса «Педагог-психолог России».</p>
+                <p style="font-size:1.1rem;">✨ <strong>Мария Львовна Плескачевская</strong> — педагог-психолог с 38-летним стажем, почётный работник образования.</p>
                 <p style="margin-top:0.8rem;">На этом сайте вы найдёте информацию о моей профессиональной деятельности, преподаваемых курсах, научных публикациях, а также сможете связаться со мной.</p>
-                <p style="margin-top:0.8rem;">🎓 Основные достижения: более 500 учеников, 20+ педагогов-наставников, авторские методики по работе с подростками.</p>
-            </div>
-            <div class="cards-grid" style="margin-top:1.5rem;">
-                <div class="card"><strong>🏫 38 лет</strong><br>в профессии</div>
-                <div class="card"><strong>🎓 МПГУ им. Ленина</strong><br>Педагогика и психология</div>
-                <div class="card"><strong>🧩 Проективные методики</strong><br>«Несуществующее животное», песочница</div>
-                <div class="card"><strong>🧶 Вязание + колокольчики</strong><br>тихая радость после работы</div>
             </div>
         </div>
 
-        <!-- ПОЛНАЯ БИОГРАФИЯ (максимально подробно) -->
-        <div id="bio" class="section">
-            <h2>Полная биография</h2>
-            
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold;">📍 Детство и юность</div>
-            <div class="answer" style="margin-top:0.5rem;">Мария Львовна родилась 4 марта 1963 года в Москве. Детство прошло в частых переездах по служебным делам отца — семья жила в разных городах, что сформировало гибкий характер и умение находить общий язык с разными людьми. В 14 лет семья окончательно переехала в Тамбов, который стал для неё родным городом. Сама она говорит: «Я москвичка по рождению, тамбовчанка по духу».</div>
-
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">📚 Школьные годы</div>
-            <div class="answer" style="margin-top:0.5rem;">В школе Мария Львовна была активной ученицей. Любимыми предметами были литература и биология. Первая учительница — Валентина Ивановна — сказала ей однажды: «Маша, ошибка — это не провал, а подсказка, куда расти». Эти слова стали жизненным ориентиром. В 9 классе произошёл случай, определивший профессию: одноклассница переживала развод родителей, замкнулась, и рядом не оказалось взрослого, который бы её выслушал. Тогда Мария Львовна решила стать тем человеком, который понимает душу ребёнка.</div>
-
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🎓 Высшее образование</div>
-            <div class="answer" style="margin-top:0.5rem;">Поступила в Московский государственный педагогический университет (МПГУ) им. Ленина на факультет педагогики и психологии. Вспоминает лекции профессоров, ночи в библиотеке, жаркие споры с однокурсниками. Москва дала академическую базу, а Тамбов — настоящую практику. Затем окончила аспирантуру и защитила кандидатскую диссертацию по педагогической психологии.</div>
-
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">👩‍🏫 Профессиональный путь</div>
-            <div class="answer" style="margin-top:0.5rem;">
-                <div class="timeline">
-                    <div class="timeline-item"><span class="timeline-year">1988–1995:</span> Педагог-психолог в тамбовской школе №22. Первый самостоятельный опыт — кружок «Учись общаться».</div>
-                    <div class="timeline-item"><span class="timeline-year">1995–2005:</span> Руководитель психологической службы в школе, разработка авторских программ.</div>
-                    <div class="timeline-item"><span class="timeline-year">2005–2017:</span> Преподаватель психологии в техникуме, наставничество молодых педагогов.</div>
-                    <div class="timeline-item"><span class="timeline-year">2017–настоящее время:</span> Педагог-психолог, лектор, автор публикаций.</div>
-                </div>
-            </div>
-
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🏆 Награды и достижения</div>
-            <div class="answer" style="margin-top:0.5rem;">
-                • Почётный работник образования РФ<br>
-                • Лауреат всероссийского конкурса «Педагог-психолог России» (2015, 2020)<br>
-                • Благодарственные письма Министерства просвещения<br>
-                • Грамоты администрации Тамбовской области<br>
-                • Автор более 15 научных статей в рецензируемых журналах
-            </div>
-
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">💡 Научные интересы</div>
-            <div class="answer" style="margin-top:0.5rem;">Проективные методики в психологии, эмоциональный интеллект подростков, профилактика буллинга, песочная терапия, возрастная психология.</div>
-
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🧘 Личная жизнь и хобби</div>
-            <div class="answer" style="margin-top:0.5rem;">Мария Львовна собирает керамические колокольчики и вяжет крючком. Вязание называет своей медитацией: «Сидишь, петля за петлёй, восстанавливаешь равновесие после тяжёлого разговора». Колокольчики звенят на даче под Тамбовом. Любит перечитывать Чехова, смотрит советское кино и «Общество мёртвых поэтов».</div>
-
-            <div class="question" style="background:#eafaf2; display:inline-block; padding:0.2rem 1rem; border-radius:20px; font-weight:bold; margin-top:1rem;">🍀 Жизненное кредо</div>
-            <div class="answer quote" style="background:#e2f0e9; padding:0.8rem; border-radius:1rem; margin-top:0.5rem;">«Не оценивать — понимать. Не давить — предлагать. И всегда помнить, что за плохим поведением стоит либо боль, либо страх.»</div>
-        </div>
-
-        <!-- Курсы -->
         <div id="courses" class="section">
-            <h2>Преподаваемые курсы</h2>
+            <h2>📚 Преподаваемые курсы</h2>
             <div class="cards-grid">
-                <div class="card">
-                    <h3>📘 Психология общения</h3>
-                    <p>Основы эффективной коммуникации, разрешение конфликтов, активное слушание.</p>
-                    <a href="#" class="btn">Скачать программу (PDF)</a>
-                </div>
-                <div class="card">
-                    <h3>🧠 Возрастная психология</h3>
-                    <p>Особенности развития детей и подростков. Кризисы возраста, методы диагностики.</p>
-                    <a href="#" class="btn">Скачать программу (PDF)</a>
-                </div>
-                <div class="card">
-                    <h3>🎭 Проективные методики</h3>
-                    <p>«Несуществующее животное», «Рисунок семьи», песочная терапия.</p>
-                    <a href="#" class="btn">Скачать программу (PDF)</a>
-                </div>
-                <div class="card">
-                    <h3>💡 Эмоциональный интеллект</h3>
-                    <p>Развитие EQ у подростков. Авторская программа.</p>
-                    <a href="#" class="btn">Скачать программу (PDF)</a>
-                </div>
+                <div class="card"><h3>Психология общения</h3><p>Основы эффективной коммуникации, разрешение конфликтов.</p><a href="#" class="btn">Подробнее</a></div>
+                <div class="card"><h3>Возрастная психология</h3><p>Особенности развития детей и подростков.</p><a href="#" class="btn">Подробнее</a></div>
+                <div class="card"><h3>Проективные методики</h3><p>Рисуночные тесты, песочная терапия.</p><a href="#" class="btn">Подробнее</a></div>
+                <div class="card"><h3>Эмоциональный интеллект</h3><p>Развитие EQ у подростков.</p><a href="#" class="btn">Подробнее</a></div>
             </div>
         </div>
 
-        <!-- Публикации -->
         <div id="publications" class="section">
-            <h2>Научные публикации</h2>
+            <h2>📄 Научные публикации</h2>
             <div class="cards-grid">
-                <div class="card">
-                    <h3>«Проективные методики в школьной психологии»</h3>
-                    <div class="date">Журнал «Школьный психолог», 2021</div>
-                    <a href="#" class="btn">Читать аннотацию</a>
-                </div>
-                <div class="card">
-                    <h3>«Эмоциональный интеллект подростка»</h3>
-                    <div class="date">Сборник конференции, 2023</div>
-                    <a href="#" class="btn">Читать аннотацию</a>
-                </div>
-                <div class="card">
-                    <h3>«Роль психолога в профилактике буллинга»</h3>
-                    <div class="date">«Вестник практической психологии», 2022</div>
-                    <a href="#" class="btn">Читать аннотацию</a>
-                </div>
+                <div class="card"><h3>Проективные методики в школе</h3><div class="date">Журнал «Школьный психолог», 2021</div><a href="#" class="btn">Аннотация</a></div>
+                <div class="card"><h3>Эмоциональный интеллект подростка</h3><div class="date">Сборник конференции, 2023</div><a href="#" class="btn">Аннотация</a></div>
+                <div class="card"><h3>Профилактика буллинга</h3><div class="date">«Вестник психологии», 2022</div><a href="#" class="btn">Аннотация</a></div>
             </div>
         </div>
 
-        <!-- Новости -->
         <div id="news" class="section">
-            <h2>Новости и анонсы</h2>
+            <h2>📰 Новости</h2>
             <div class="cards-grid">
-                <div class="card">
-                    <h3>🎤 Вебинар «Современные подходы к работе с подростками»</h3>
-                    <div class="date">15 июня 2026 • 15:00 МСК</div>
-                    <a href="#" class="btn">Подробнее</a>
-                </div>
-                <div class="card">
-                    <h3>📘 Новая статья в журнале</h3>
-                    <div class="date">Май 2026</div>
-                    <a href="#" class="btn">Читать</a>
-                </div>
-                <div class="card">
-                    <h3>🏆 Выступление на конференции в Москве</h3>
-                    <div class="date">10-12 сентября 2026</div>
-                    <a href="#" class="btn">Подробнее</a>
-                </div>
+                <div class="card"><h3>Вебинар для педагогов</h3><div class="date">15 июня 2026</div><a href="#" class="btn">Подробнее</a></div>
+                <div class="card"><h3>Новая статья в журнале</h3><div class="date">Май 2026</div><a href="#" class="btn">Читать</a></div>
+                <div class="card"><h3>Конференция в Москве</h3><div class="date">10-12 сентября 2026</div><a href="#" class="btn">Подробнее</a></div>
             </div>
         </div>
 
-        <!-- Контакты -->
         <div id="contacts" class="section">
-            <h2>Контакты и обратная связь</h2>
+            <h2>📞 Контакты</h2>
             <div class="contacts-grid">
                 <div class="contacts-info">
-                    <h3 style="color:#2d6a4f;">📞 Свяжитесь со мной</h3>
                     <p>📧 <a href="mailto:m.l.pleskachevskaya@edu.ru">m.l.pleskachevskaya@edu.ru</a></p>
                     <p>📱 <a href="tel:+79001234567">+7 (900) 123-45-67</a></p>
-                    <p>💬 <a href="#">Telegram: @pleskachevskaya</a></p>
-                    <p>🌐 <a href="#">VK: vk.com/pleskachevskaya</a></p>
-                    <p>📍 Приём: Тамбов, ул. Советская, 22, каб. 307</p>
-                    <hr style="margin:1rem 0; border-color:#c8e6d9;">
-                    <p>📅 Часы работы: Пн-Пт 10:00 – 17:00</p>
+                    <p>💬 Telegram: @pleskachevskaya</p>
+                    <p>📍 Тамбов, ул. Советская, 22, каб. 307</p>
                 </div>
                 <div class="contact-form">
-                    <h3 style="color:#2d6a4f;">✉️ Написать сообщение</h3>
+                    <h3>✉️ Написать сообщение</h3>
                     <form id="feedbackForm">
-                        <div class="form-group">
-                            <input type="text" placeholder="Ваше имя" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email для ответа" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea rows="4" placeholder="Сообщение..." id="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">📨 Отправить</button>
+                        <div class="form-group"><input type="text" placeholder="Ваше имя" id="name" required></div>
+                        <div class="form-group"><input type="email" placeholder="Email" id="email" required></div>
+                        <div class="form-group"><textarea rows="4" placeholder="Сообщение..." id="message" required></textarea></div>
+                        <button type="submit" class="submit-btn">Отправить</button>
                     </form>
-                    <p id="formResult" style="margin-top:0.8rem; font-size:0.9rem;"></p>
+                    <p id="formResult" style="margin-top:0.8rem;"></p>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        ✦ Мария Львовна Плескачевская | Педагог-психолог, кандидат педагогических наук ✦<br>
-        © 2026 · Все материалы сайта являются интеллектуальной собственностью преподавателя
+        ✦ Мария Львовна Плескачевская | Педагог-психолог ✦
     </div>
 </div>
-
 <script>
-    function showSection(sectionId) {
-        // Скрыть все секции
-        const sections = document.querySelectorAll('.section');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
-        // Показать выбранную
-        const activeSection = document.getElementById(sectionId);
-        if (activeSection) {
-            activeSection.classList.add('active');
-        }
-        // Сохранить в истории браузера (опционально)
-        history.pushState(null, '', '#' + sectionId);
-    }
-
-    // При загрузке проверяем хеш в URL
-    window.addEventListener('load', function() {
-        const hash = window.location.hash.substring(1);
-        if (hash && document.getElementById(hash)) {
-            showSection(hash);
-        }
-    });
-
-    // Обработка формы
-    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+    document.getElementById('feedbackForm')?.addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        if(name && email && message) {
-            document.getElementById('formResult').innerHTML = '✅ Спасибо, ' + name + '! Ваше сообщение отправлено. Я свяжусь с вами в ближайшее время.';
-            document.getElementById('feedbackForm').reset();
-        } else {
-            document.getElementById('formResult').innerHTML = '❌ Пожалуйста, заполните все поля.';
+        if(name) {
+            document.getElementById('formResult').innerHTML = '✅ Спасибо, ' + name + '! Сообщение отправлено.';
+            this.reset();
         }
     });
 </script>
