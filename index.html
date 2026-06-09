@@ -87,40 +87,41 @@
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
-        /* Сетка для курсов - все фото в строку, одинаковый размер */
-        .courses-grid {
+        /* Сетка для фото */
+        .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             margin-top: 1rem;
         }
-        .course-card {
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .photo-card {
             background: #eef7f2;
             border-radius: 1rem;
             overflow: hidden;
             transition: 0.2s;
-            display: flex;
-            flex-direction: column;
         }
-        .course-card:hover {
+        .photo-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
-        .course-card img {
+        .photo-card img {
             width: 100%;
             height: auto;
             display: block;
-            object-fit: contain;
-            background: #eef7f2;
         }
-        /* Адаптация под разные экраны */
         @media (max-width: 900px) {
-            .courses-grid {
+            .grid-4, .grid-3 {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
         @media (max-width: 500px) {
-            .courses-grid {
+            .grid-4, .grid-3 {
                 grid-template-columns: 1fr;
             }
         }
@@ -177,7 +178,6 @@
             border-radius: 1rem;
             flex: 1;
             text-align: center;
-            min-width: 120px;
         }
         .stat-number {
             font-size: 2rem;
@@ -210,14 +210,13 @@
     </div>
 
     <div class="content">
-        <!-- Главная страница - своя информация -->
+        <!-- Главная -->
         <div id="home" class="section">
             <h2>Добро пожаловать</h2>
             <div class="info-card">
                 <p style="font-size:1.1rem;">✨ <strong>Мария Львовна Плескачевская</strong> — педагог-психолог с 38-летним стажем, почётный работник образования, лауреат конкурса «Педагог-психолог России».</p>
                 <p style="margin-top:0.8rem;">На этом сайте вы найдёте информацию о моей профессиональной деятельности, пройденных курсах повышения квалификации, научных публикациях, а также сможете связаться со мной.</p>
             </div>
-            
             <div class="stats">
                 <div class="stat"><div class="stat-number">38</div><div>лет в профессии</div></div>
                 <div class="stat"><div class="stat-number">500+</div><div>учеников</div></div>
@@ -226,66 +225,44 @@
             </div>
         </div>
 
-        <!-- ПРОЙДЕННЫЕ КУРСЫ - все фото в одну строку, одинакового размера -->
+        <!-- ПРОЙДЕННЫЕ КУРСЫ (4 фото) -->
         <div id="courses" class="section">
             <h2>📚 Пройденные курсы повышения квалификации</h2>
-            <div class="courses-grid">
-                <div class="course-card">
-                    <img src="course1.jpg" alt="Курс 1">
-                </div>
-                <div class="course-card">
-                    <img src="course2.jpg" alt="Курс 2">
-                </div>
-                <div class="course-card">
-                    <img src="course3.jpg" alt="Курс 3">
-                </div>
-                <div class="course-card">
-                    <img src="course4.jpg" alt="Курс 4">
-                </div>
+            <div class="grid-4">
+                <div class="photo-card"><img src="course1.jpg" alt="Курс 1"></div>
+                <div class="photo-card"><img src="course2.jpg" alt="Курс 2"></div>
+                <div class="photo-card"><img src="course3.jpg" alt="Курс 3"></div>
+                <div class="photo-card"><img src="course4.jpg" alt="Курс 4"></div>
             </div>
         </div>
 
-        <!-- Публикации -->
+        <!-- НАУЧНЫЕ ПУБЛИКАЦИИ (3 фото) -->
         <div id="publications" class="section">
             <h2>📄 Научные публикации</h2>
-            <div class="stats" style="flex-direction:column;">
-                <div class="info-card">
-                    <h3>Проективные методики в школьной психологии</h3>
-                    <div style="font-size:0.85rem; color:#6b9080;">Журнал «Школьный психолог», 2021</div>
-                    <a href="#" class="btn" style="display:inline-block; background:#40916c; color:white; padding:0.4rem 1rem; border-radius:30px; text-decoration:none; font-size:0.8rem; margin-top:0.8rem;">Аннотация</a>
-                </div>
-                <div class="info-card">
-                    <h3>Эмоциональный интеллект подростка</h3>
-                    <div style="font-size:0.85rem; color:#6b9080;">Сборник конференции «Психология образования», 2023</div>
-                    <a href="#" class="btn" style="display:inline-block; background:#40916c; color:white; padding:0.4rem 1rem; border-radius:30px; text-decoration:none; font-size:0.8rem; margin-top:0.8rem;">Аннотация</a>
-                </div>
-                <div class="info-card">
-                    <h3>Роль психолога в профилактике буллинга</h3>
-                    <div style="font-size:0.85rem; color:#6b9080;">«Вестник практической психологии», 2022</div>
-                    <a href="#" class="btn" style="display:inline-block; background:#40916c; color:white; padding:0.4rem 1rem; border-radius:30px; text-decoration:none; font-size:0.8rem; margin-top:0.8rem;">Аннотация</a>
-                </div>
+            <div class="grid-3">
+                <div class="photo-card"><img src="pub1.jpg" alt="Публикация 1"></div>
+                <div class="photo-card"><img src="pub2.jpg" alt="Публикация 2"></div>
+                <div class="photo-card"><img src="pub3.jpg" alt="Публикация 3"></div>
             </div>
         </div>
 
         <!-- Новости -->
         <div id="news" class="section">
             <h2>📰 Новости</h2>
-            <div class="stats" style="flex-direction:column;">
-                <div class="info-card">
-                    <h3>🎤 Вебинар «Современные подходы к работе с подростками»</h3>
-                    <div style="font-size:0.85rem; color:#6b9080;">15 июня 2026 • 15:00 МСК</div>
-                    <a href="#" class="btn" style="display:inline-block; background:#40916c; color:white; padding:0.4rem 1rem; border-radius:30px; text-decoration:none; font-size:0.8rem; margin-top:0.8rem;">Подробнее</a>
-                </div>
-                <div class="info-card">
-                    <h3>📘 Выход новой статьи</h3>
-                    <div style="font-size:0.85rem; color:#6b9080;">Май 2026</div>
-                    <a href="#" class="btn" style="display:inline-block; background:#40916c; color:white; padding:0.4rem 1rem; border-radius:30px; text-decoration:none; font-size:0.8rem; margin-top:0.8rem;">Читать</a>
-                </div>
-                <div class="info-card">
-                    <h3>🏆 Выступление на конференции в Москве</h3>
-                    <div style="font-size:0.85rem; color:#6b9080;">10-12 сентября 2026</div>
-                    <a href="#" class="btn" style="display:inline-block; background:#40916c; color:white; padding:0.4rem 1rem; border-radius:30px; text-decoration:none; font-size:0.8rem; margin-top:0.8rem;">Подробнее</a>
-                </div>
+            <div class="info-card">
+                <h3>🎤 Вебинар «Современные подходы к работе с подростками»</h3>
+                <div style="font-size:0.85rem; color:#6b9080;">15 июня 2026 • 15:00 МСК</div>
+                <a href="#" class="btn" style="display:inline-block; background:#40916c; color:white; padding:0.4rem 1rem; border-radius:30px; text-decoration:none; font-size:0.8rem; margin-top:0.8rem;">Подробнее</a>
+            </div>
+            <div class="info-card">
+                <h3>📘 Выход новой статьи</h3>
+                <div style="font-size:0.85rem; color:#6b9080;">Май 2026</div>
+                <a href="#" class="btn" style="display:inline-block; background:#40916c; color:white; padding:0.4rem 1rem; border-radius:30px; text-decoration:none; font-size:0.8rem; margin-top:0.8rem;">Читать</a>
+            </div>
+            <div class="info-card">
+                <h3>🏆 Выступление на конференции в Москве</h3>
+                <div style="font-size:0.85rem; color:#6b9080;">10-12 сентября 2026</div>
+                <a href="#" class="btn" style="display:inline-block; background:#40916c; color:white; padding:0.4rem 1rem; border-radius:30px; text-decoration:none; font-size:0.8rem; margin-top:0.8rem;">Подробнее</a>
             </div>
         </div>
 
